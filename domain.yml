@@ -1,0 +1,66 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_itr_form
+  - provide_income_salary
+  - provide_income_business
+  - provide_income_rental
+  - provide_income_capital_gains
+  - provide_income_interest
+  - ask_investment_advice
+  - ask_about_tax_deductions
+  - provide_tax_saving_goal
+  - provide_tax_saving_scheme
+  - ask_about_loan_repayments
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm your tax advisory assistant. How can I help you today?"
+      buttons:
+        - title: "Help me choose an ITR form"
+          payload: "/ask_itr_form"
+        - title: "Suggest tax-saving investments"
+          payload: "/ask_investment_advice"
+
+  utter_ask_income_type:
+    - text: "To recommend the right ITR form, I need to know about your income sources. What type of income do you have?"
+      buttons:
+        - title: "I have salary income"
+          payload: "/provide_income_salary"
+        - title: "I have business income"
+          payload: "/provide_income_business"
+        - title: "I have rental income"
+          payload: "/provide_income_rental"
+        - title: "I have capital gains income"
+          payload: "/provide_income_capital_gains"
+        - title: "I have interest income"
+          payload: "/provide_income_interest"
+
+  utter_ask_tax_saving_goal:
+    - text: "What is your primary goal for tax-saving investments? Is it for retirement, insurance, or something else?"
+      buttons:
+        - title: "Retirement savings"
+          payload: "/provide_tax_saving_goal{'goal':'retirement'}"
+        - title: "Insurance benefits"
+          payload: "/provide_tax_saving_goal{'goal':'insurance'}"
+        - title: "General savings"
+          payload: "/provide_tax_saving_goal{'goal':'savings'}"
+
+  utter_suggest_itr_form:
+    - text: "Based on your responses, I recommend filing ITR-{form_number}. Here's why: {reason}."
+
+  utter_suggest_investment_options:
+    - text: "You can save on taxes by investing in options like PPF, ELSS, NPS, or claiming deductions on home loan repayments. Would you like more details on any of these?"
+
+  utter_explain_tax_deductions:
+    - text: "Under Section 80C, you can claim up to ₹1.5 lakh for investments like PPF, ELSS, and fixed deposits. Would you like to explore this further?"
+
+actions:
+  - action_recommend_itr_form
+  - action_suggest_investments
+  - action_explain_tax_deductions
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

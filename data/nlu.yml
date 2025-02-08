@@ -1,0 +1,52 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+
+  - intent: ask_itr_form
+    examples: |
+      - Which ITR form should I use?
+      - Help me choose an ITR form
+      - What form should I file?
+      - I need help selecting ITR form
+      - Which tax form is suitable for me?
+      - How do I know which ITR to file?
+
+  - intent: provide_income_salary
+    examples: |
+      - I have salary income
+      - I work as an employee
+      - I get salary from my company
+      - My income is from salary
+      - I'm a salaried person
+
+  - intent: provide_income_business
+    examples: |
+      - I have business income
+      - I run my own business
+      - I'm self-employed
+      - I earn from my business
+      - I have income from business activities
+
+  - intent: provide_income_rental
+    examples: |
+      - I have rental income
+      - I earn rent from property
+      - I get money from renting
+      - My property gives rental income
+      - I have income from rent
+
+  - intent: ask_investment_advice
+    examples: |
+      - What investments can save tax?
+      - Tell me about tax saving investments
+      - How can I reduce my taxes?
+      - What are the best tax saving options?
+      - Suggest some tax saving schemes

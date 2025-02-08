@@ -1,0 +1,16 @@
+version: "3.1"
+
+stories:
+  - story: tax form recommendation path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_itr_form
+      - action: utter_ask_income_type
+      - intent: provide_income_salary
+      - action: action_recommend_itr_form
+
+  - story: investment advice path
+    steps:
+      - intent: ask_investment_advice
+      - action: action_suggest_investments
